@@ -11,3 +11,8 @@ scrape_configs:
   static_configs:
   - targets:
     - localhost:5000  # metrics from model
+- job_name: 'jenkins'
+  metrics_path: /promethes/
+  static_configs:
+    - targets:
+        - localhost:8080
