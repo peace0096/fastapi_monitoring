@@ -9,3 +9,15 @@ services:
       - "5000:80"
     environment:
       - ENABLE_METRICS=true
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prom-docker
+    volumes:
+      - /home/harry/workspace/mlops_serving/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    network_mode: "host"
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana-docker
+    network_mode: "host"
