@@ -18,7 +18,7 @@ pipeline {
         }
         stage("Update model") {
             steps {
-                sh "docker exec -i mlops_serving_web python train.py"
+                sh "docker exec -i fastapi python train.py"
             }
         }
     }
